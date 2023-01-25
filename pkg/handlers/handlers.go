@@ -23,9 +23,9 @@ func GetNumberDays(c *gin.Context) {
 
     days := int(today.Sub(inputYaer).Hours())/24
 	if days >=0 {
-		c.JSON(http.StatusOK, "Days gone:"+ fmt.Sprint(days))
+		c.String(http.StatusOK, "Days gone:"+ fmt.Sprint(days))
 	} else {
-		c.JSON(http.StatusOK, "Days left:"+ fmt.Sprint(-days))
+		c.String(http.StatusOK, "Days gone:"+ fmt.Sprint(-days))
 	}
   
   }
