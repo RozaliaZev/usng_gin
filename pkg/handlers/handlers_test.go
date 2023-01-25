@@ -21,7 +21,6 @@ func TestGetNumberDays(t *testing.T) {
 	r, _ := http.NewRequest("GET", "/when/2000", nil)
 	router.ServeHTTP(w, r)
 	
-	//assert.JSONEq(t, "Days gone:8425", "Days gone:0")
 	str, _ := ioutil.ReadAll(w.Body)
     assert.Equal(t, "Days gone:8425", string(str))
     assert.Equal(t, http.StatusOK, w.Code)
